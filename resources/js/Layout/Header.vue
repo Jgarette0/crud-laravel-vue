@@ -52,32 +52,32 @@ const toggle = () => {
             <ul
                 class="flex gap-3 place-items-center bg-accent py-2 px-2 rounded-full"
             >
-                <Link href="/"
+                <Link :href="route('home')"
                     ><li
                         class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
                     >
                         Home
                     </li>
                 </Link>
-                <Link href="/About"
+                <Link :href="route('about')"
                     ><li
                         class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
                     >
                         About
                     </li></Link
                 >
-                <Link href="/Contact"
+                <Link :href="route('contact')"
                     ><li
                         class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
                     >
                         Contact us
                     </li></Link
                 >
-                <Link href="/LoggedIn"
+                <Link :href="route('register')"
                     ><li
                         class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
                     >
-                        Login
+                        Register
                     </li></Link
                 >
             </ul>

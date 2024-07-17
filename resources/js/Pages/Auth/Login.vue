@@ -2,7 +2,7 @@
     <Title :title="`${pageTitle}`" />
     <MainLayout>
         <SectionGroup class="bg-secondary-foreground md:bg-primary">
-            <FormSection />
+            Login
         </SectionGroup>
     </MainLayout>
 </template>
@@ -11,6 +11,5 @@
 import MainLayout from "@/Layout/MainLayout.vue";
 import Title from "@/Components/Title.vue";
 import SectionGroup from "@/Components/ui/SectionGroup.vue";
-import FormSection from "@/Components/FormSection.vue";
-const pageTitle = "Contact Us";
+const pageTitle = "Login Section";
 </script>

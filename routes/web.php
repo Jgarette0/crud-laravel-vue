@@ -5,17 +5,20 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Home');
-});
+})->name('home');
 
 Route::get('/About', function () {
     return Inertia::render('About');
-});
+})->name('about');
 
 Route::get('/Contact', function () {
     return Inertia::render('Contact');
-});
+})->name('contact');
 
-Route::get('/LoggedIn', function () {
-    return Inertia::render('Log');
-});
+Route::get('/Login', function () {
+    return Inertia::render('Auth/Login');
+})->name('login');
 
+Route::get('/Register', function () {
+    return Inertia::render('Auth/Register');
+})->name('register');
