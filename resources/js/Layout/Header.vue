@@ -55,6 +55,9 @@ const toggle = () => {
                 <Link :href="route('home')"
                     ><li
                         class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
+                        :class="{
+                            'bg-blue-100': $page.component === 'Home',
+                        }"
                     >
                         Home
                     </li>
@@ -62,40 +65,54 @@ const toggle = () => {
                 <Link :href="route('about')"
                     ><li
                         class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
+                        :class="{
+                            'bg-blue-100': $page.component === 'About',
+                        }"
                     >
                         About
                     </li></Link
                 >
-                <Link :href="route('contact')"
-                    ><li
-                        class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
+
+                <div class="flex flex-row gap-3" v-if="$page.props.auth.user">
+                    <Link :href="route('contact')"
+                        ><li
+                            class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
+                            :class="{
+                                'bg-blue-100': $page.component === 'Contact',
+                            }"
+                        >
+                            Contact us
+                        </li></Link
                     >
-                        Contact us
-                    </li></Link
-                >
-                <span v-if="$page.props.auth.user">
                     <Link href="/Logout" method="post" as="button" type="button"
                         ><li
-                            class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                            class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
                         >
                             Logout
                         </li></Link
                     >
-                </span>
+                </div>
 
                 <div v-else class="flex flex-row gap-3">
                     <Link :href="route('register')"
                         ><li
-                            class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                            class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
+                            :class="{
+                                'bg-blue-100':
+                                    $page.component === 'Auth/Register',
+                            }"
                         >
-                            Register
+                            Signup
                         </li></Link
                     >
                     <Link :href="route('login')"
                         ><li
-                            class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                            class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
+                            :class="{
+                                'bg-blue-100': $page.component === 'Auth/Login',
+                            }"
                         >
-                            Login
+                            Signin
                         </li></Link
                     >
                 </div>

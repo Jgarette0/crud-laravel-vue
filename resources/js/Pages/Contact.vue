@@ -4,6 +4,7 @@
         <SectionGroup class="bg-secondary-foreground md:bg-primary">
             <FormSection />
         </SectionGroup>
+        <div class="w-screen h-screen bg-white"></div>
     </MainLayout>
 </template>
 

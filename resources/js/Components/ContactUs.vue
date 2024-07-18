@@ -22,7 +22,7 @@ import { CalendarPlus } from "lucide-vue-next";
                 </CardTitle>
             </CardHeader>
             <CardContent
-                class="text-accent text-lg md:text-xl text-justify md:text-center px-6 md:px-20"
+                class="text-accent text-lg md:text-xl text-center px-6 md:px-20"
             >
                 We’re here to discuss how we can partner, sharing our knowledge
                 and experience for your product development needs. Get started
@@ -31,8 +31,8 @@ import { CalendarPlus } from "lucide-vue-next";
             <CardFooter class="text-accent">
                 <Link href="/Contact">
                     <Button
-                        class="md:text-2xl text-md px-6 py-6 md:py-8 md:px-8 md:mt-4 rounded-[15px]"
-                        variant="secondary"
+                        class="md:text-2xl text-md px-6 py-6 md:py-8 md:px-8 md:mt-4 rounded-[15px] bg-blue-700"
+                        variant=""
                     >
                         <CalendarPlus class="md:scale-100 scale-75 mr-4" />
                         Schedule free consultation</Button

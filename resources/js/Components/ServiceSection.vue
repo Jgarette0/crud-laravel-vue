@@ -31,7 +31,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
             class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col transition-all duration-300 ease-in z-10"
             id="webdevelopment"
             :class="{
-                '-rotate-[5deg] hover:-rotate-[1deg] ': isVisible,
+                '-rotate-[1deg] hover:-rotate-[0deg] ': isVisible,
                 '': !isVisible,
             }"
         >
@@ -87,7 +87,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
             id="mobiledevelopment"
             class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row-reverse flex-col transition-all duration-300 z-8 ease-in hover:z-15"
             :class="{
-                'rotate-[5deg] hover:rotate-[1deg]': isVisible,
+                'rotate-[1deg] hover:rotate-[0deg]': isVisible,
                 '': !isVisible,
             }"
         >
@@ -142,7 +142,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
             id="projectmanagement"
             class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row flex-col transition-all duration-300 delay-[5000ms] ease-in"
             :class="{
-                '-rotate-[5deg] hover:-rotate-[1deg] ': isVisible,
+                '-rotate-[1deg] hover:-rotate-[0deg] ': isVisible,
                 '': !isVisible,
             }"
         >

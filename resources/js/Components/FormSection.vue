@@ -31,12 +31,21 @@ const submit = () => {
         <Card
             class="md:w-5/6 py-8 w-full bg-accent flex flex-col justify-around h-full rounded-[1.2rem]"
         >
+            <div
+                class="w-full flex place-items-center font-semibold text-3xl justify-center gap-4"
+            >
+                Welcome back
+                <span class="text-blue-700 font-bold text-4xl">{{
+                    $page.props.auth.user.name
+                }}</span>
+            </div>
             <div class="flex flex-col gap-4 p-4 md:p-12 w-full">
                 <div class="flex flex-col place-items-start gap-1">
                     <Label for="name" class="text-right text-md md:text-xl">
-                        Full name
+                        Name
                     </Label>
                     <Input
+                        :placeholder="$page.props.auth.user.name"
                         id="name"
                         class="py-3 md:py-6 text-md md:text-xl"
                         v-model="form.name"
@@ -47,6 +56,7 @@ const submit = () => {
                         Email
                     </Label>
                     <Input
+                        :placeholder="$page.props.auth.user.email"
                         v-model="form.email"
                         id="username"
                         class="py-1 md:py-6 text-md md:text-xl"

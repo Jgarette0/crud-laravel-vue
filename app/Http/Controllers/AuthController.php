@@ -2,25 +2,25 @@
 
 
     namespace App\Http\Controllers;
-    use App\Models\User; 
+    use App\Models\User;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Http\RedirectResponse;
     use Illuminate\Http\Request;
-    
+
     class AuthController extends Controller
     {
 
         //Function that handles registration
-        public function register(Request $request) 
+        public function register(Request $request)
         {//Validate
            $fields = $request->validate([
                 'name' => ['required', 'max:255'],
                 'email' => ['required', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'confirmed']
             ]);
-           
+
             $user = User::create($fields); //Register and Create to database
-            Auth::login($user);            //Login 
+            Auth::login($user);            //Login
             return redirect()->route('home');//Redirect to home page
         }
 
@@ -31,7 +31,7 @@
             (['email' => ['required', 'email']
             ,'password' => ['required'],]);
             // $request->remember - will remember and stores a token?
-            if (Auth::attempt($fields, $request->remember)) 
+            if (Auth::attempt($fields, $request->remember))
             {
                 $request->session()->regenerate();
                 return redirect()->intended('/Contact');
@@ -42,7 +42,7 @@
         }
 
         //Function that handles Logout
-        public function logout(Request $request) 
+        public function logout(Request $request)
         {
             Auth::logout();
             $request->session()->invalidate();
@@ -50,4 +50,3 @@
             return redirect()->route('home');
         }
     }
-    

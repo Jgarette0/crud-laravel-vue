@@ -86,7 +86,7 @@ onMounted(() => {
         </div>
         <div class="mt-10 w-screen">
             <Button
-                class="group px-5 md:px-6 text-lg md:text-2xl font-thin rounded-full py-5 md:py-7 hover:opacity-85 sm:flex"
+                class="group px-5 pl-6 md:px-6 text-lg md:text-2xl font-thin rounded-full py-8 md:py-7 hover:opacity-85 sm:flex"
                 variant="outline"
                 :class="{
                     'bg-primary text-accent border-none': isScrolling,
