@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+
 use Inertia\Inertia;
 
 
@@ -19,6 +21,19 @@ Route::get('/Login', function () {
     return Inertia::render('Auth/Login');
 })->name('login');
 
+
+
 Route::get('/Register', function () {
     return Inertia::render('Auth/Register');
 })->name('register');
+//create a post request to listen HTTP request
+//when a post request is made it will be handles on AuthController
+Route::post('/Register', [AuthController::class, 'register']);
+
+
+Route::get('/Login', function () {
+    return Inertia::render('Auth/Login');
+})->name('login');
+//create a post request to listen HTTP request
+//when a post request is made it will be handles on AuthController
+Route::post('/Login', [AuthController::class, 'login']);

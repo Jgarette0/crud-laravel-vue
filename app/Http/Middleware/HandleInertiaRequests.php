@@ -37,7 +37,11 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             //this can be access through $page.key.value anywhere
-            'user.auth' => 'Jilian' ?? null
+             // Lazily...
+             'auth.user' => fn () => $request->user()
+             ? $request->user()->only('id', 'name', 'email')
+             : null,
+     
         ]);
     }
 }

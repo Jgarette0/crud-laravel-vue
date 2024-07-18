@@ -80,6 +80,13 @@ const toggle = () => {
                         Register
                     </li></Link
                 >
+                <Link :href="route('login')"
+                    ><li
+                        class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                    >
+                        Login
+                    </li></Link
+                >
             </ul>
         </header>
     </main>
