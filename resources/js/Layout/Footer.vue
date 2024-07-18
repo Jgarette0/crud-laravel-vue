@@ -15,10 +15,12 @@ import { Linkedin } from "lucide-vue-next";
                 class="h-[65%] w-screen flex flex-col place-items-center justify-end"
             >
                 <div
+                    v-if="$page.props.auth.user"
                     class="flex-col md:flex-row justify-center text-[12rem] uppercase font-dahlia pb-20 hidden md:flex place-items-center gap-3"
                 >
                     {{ $page.props.auth.user.name }}
                 </div>
+                <div v-else></div>
                 <div
                     class="flex flex-col md:flex-row justify-center md:hidden place-items-center gap-3"
                 >

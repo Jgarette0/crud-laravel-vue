@@ -110,6 +110,13 @@ const toggle = () => {
                         ABOUT
                     </Link>
                     <Link
+                        href="/Register"
+                        class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out delay-300"
+                        :class="slideLeft ? 'translate-x-8' : 'translate-x-72'"
+                    >
+                        REGISTER
+                    </Link>
+                    <Link
                         href="/Login"
                         class="block font-light font-mona text-primary text-3xl hover:opacity-85 transition-all duration-300 ease-in-out delay-300"
                         :class="slideLeft ? 'translate-x-8' : 'translate-x-72'"

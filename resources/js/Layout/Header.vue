@@ -73,20 +73,32 @@ const toggle = () => {
                         Contact us
                     </li></Link
                 >
-                <Link :href="route('register')"
-                    ><li
-                        class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                <span v-if="$page.props.auth.user">
+                    <Link href="/Logout" method="post" as="button" type="button"
+                        ><li
+                            class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                        >
+                            Logout
+                        </li></Link
                     >
-                        Register
-                    </li></Link
-                >
-                <Link :href="route('login')"
-                    ><li
-                        class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                </span>
+
+                <div v-else class="flex flex-row gap-3">
+                    <Link :href="route('register')"
+                        ><li
+                            class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                        >
+                            Register
+                        </li></Link
                     >
-                        Login
-                    </li></Link
-                >
+                    <Link :href="route('login')"
+                        ><li
+                            class="font-semibold text-[16px] font-mona text-center px-6 py-3 bg-primary text-accent rounded-full hover:opacity-90"
+                        >
+                            Login
+                        </li></Link
+                    >
+                </div>
             </ul>
         </header>
     </main>
