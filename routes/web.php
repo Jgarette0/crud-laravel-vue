@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FormController;
-
+use App\Models\Form;
 use Inertia\Inertia;
 
 
@@ -14,9 +14,6 @@ Route::get('/About', function () {
     return Inertia::render('About');
 })->name('about');
 
-Route::get('/Contact', function () {
-    return Inertia::render('Contact');
-})->name('contact');
 
 Route::get('/Login', function () {
     return Inertia::render('Auth/Login');
@@ -26,14 +23,12 @@ Route::get('/Register', function () {
     return Inertia::render('Auth/Register');
 })->name('register');
 
-Route::get('/Login', function () {
-    return Inertia::render('Auth/Login');
-})->name('login');
 
 Route::get('/Contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
+Route::inertia('/Contact','Contact' , ['forms' => Form::all()])->name('contact');
 Route::post('/Login', [AuthController::class, 'login']);
 Route::post('/Contact', [FormController::class, 'contact']);
 Route::post('/Register', [AuthController::class, 'register']);

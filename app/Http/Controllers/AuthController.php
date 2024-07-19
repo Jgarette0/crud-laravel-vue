@@ -10,27 +10,26 @@
     class AuthController extends Controller
     {
 
-        //Function that handles registration
-        public function register(Request $request)
-        {//Validate
+      
+         public function register(Request $request)
+        {
            $fields = $request->validate([
                 'name' => ['required', 'max:255'],
                 'email' => ['required', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'confirmed']
             ]);
 
-            $user = User::create($fields); //Register and Create to database
-            Auth::login($user);            //Login
-            return redirect()->route('home');//Redirect to home page
+            $user = User::create($fields); 
+            Auth::login($user);           
+            return redirect()->route('home');
         }
 
-        //Function that handles Login
         public function login(Request $request): RedirectResponse
         {
             $fields = $request->validate
             (['email' => ['required', 'email']
             ,'password' => ['required'],]);
-            // $request->remember - will remember and stores a token?
+        
             if (Auth::attempt($fields, $request->remember))
             {
                 $request->session()->regenerate();
@@ -41,7 +40,6 @@
             ->onlyInput('email');
         }
 
-        //Function that handles Logout
         public function logout(Request $request)
         {
             Auth::logout();

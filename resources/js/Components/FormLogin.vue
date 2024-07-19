@@ -31,6 +31,7 @@ const submit = () => {
             class="text-white"
             type="password"
             label="Password"
+            autocomplete="off"
             v-model="form.password"
         ></v-text-field>
         <div>

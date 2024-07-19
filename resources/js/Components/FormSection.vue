@@ -34,8 +34,8 @@ const submit = () => {
             <div
                 class="w-full flex place-items-center font-semibold text-3xl justify-center gap-4"
             >
-                Welcome back
-                <span class="text-blue-700 font-bold text-4xl">{{
+                Welcome
+                <span class="text-blue-700 font-bold text-4xl uppercase">{{
                     $page.props.auth.user.name
                 }}</span>
             </div>
@@ -73,14 +73,38 @@ const submit = () => {
                     />
                 </div>
                 <div class="flex flex-col place-items-start gap-1">
-                    <Label for="username" class="text-right text-md md:text-xl">
-                        How can we help you?
-                    </Label>
-                    <Textarea
+                    <!-- <Label for="username" class="text-right text-md md:text-xl">
+                        How can we help you {{ $page.props.auth.user.name }}?
+                    </Label> -->
+                    <!-- <Textarea
                         v-model="form.description"
                         class="py-1 md:py-6 text-md md:text-xl"
                         placeholder="Type your message here."
-                    />
+                    /> --><Label
+                        for="serviceType"
+                        class="text-right text-md md:text-xl"
+                    >
+                        <span class="uppercase">
+                            {{ $page.props.auth.user.name }}</span
+                        >, What service do you need?
+                    </Label>
+                    <select
+                        v-model="form.description"
+                        id="serviceType"
+                        class="py-1 md:py-6 text-md md:text-xl w-full rounded-[0px] border"
+                        placeholder="Web Development"
+                    >
+                        <option value="" disabled selected>
+                            Select a service
+                        </option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Mobile Development">
+                            Mobile Development
+                        </option>
+                        <option value="Project Management">
+                            Project Management
+                        </option>
+                    </select>
                 </div>
                 <Button
                     class="group px-5 md:px-6 text-lg md:text-2xl rounded-full py-3 md:py-7 sm:flex font-mona bg-primary text-accent"
