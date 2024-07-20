@@ -102,7 +102,7 @@ const toggle = () => {
                                     $page.component === 'Auth/Register',
                             }"
                         >
-                            Signup
+                            Register
                         </li></Link
                     >
                     <Link :href="route('login')"
@@ -112,7 +112,7 @@ const toggle = () => {
                                 'bg-blue-100': $page.component === 'Auth/Login',
                             }"
                         >
-                            Signin
+                            Login
                         </li></Link
                     >
                 </div>

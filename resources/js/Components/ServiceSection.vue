@@ -63,21 +63,12 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
                         <Button
                             class="group px-5 md:px-6 text-lg md:text-2xl font-thin rounded-full py-5 md:py-7 hover:opacity-85 sm:flex"
                             variant="outline"
-                            :class="{
-                                'bg-primary text-accent border-none':
-                                    isScrolling,
-                                '': !isScrolling,
-                            }"
                             >Learn more
                             <ArrowDownRight
                                 width="40"
                                 height="40"
                                 stroke-width="1.5"
                                 class="px-2 transform group-hover:-rotate-45 transition-all duration-300 ease-in-out group-hover:text-primary"
-                                :class="{
-                                    'text-white ': isScrolling,
-                                    'text-primary': !isScrolling,
-                                }"
                         /></Button>
                     </Link>
                 </CardFooter>
@@ -119,21 +110,12 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
                         <Button
                             class="group px-5 md:px-6 text-lg md:text-2xl font-thin rounded-full py-5 md:py-7 hover:opacity-85 sm:flex"
                             variant="outline"
-                            :class="{
-                                'bg-primary text-accent border-none':
-                                    isScrolling,
-                                '': !isScrolling,
-                            }"
                             >Learn more
                             <ArrowDownRight
                                 width="40"
                                 height="40"
                                 stroke-width="1.5"
                                 class="px-2 transform group-hover:-rotate-45 transition-all duration-300 ease-in-out group-hover:text-primary"
-                                :class="{
-                                    'text-white ': isScrolling,
-                                    'text-primary': !isScrolling,
-                                }"
                         /></Button> </Link
                 ></CardFooter>
             </div>
@@ -174,21 +156,12 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
                         <Button
                             class="group px-5 md:px-6 text-lg md:text-2xl font-thin rounded-full py-5 md:py-7 hover:opacity-85 sm:flex"
                             variant="outline"
-                            :class="{
-                                'bg-primary text-accent border-none':
-                                    isScrolling,
-                                '': !isScrolling,
-                            }"
                             >Learn more
                             <ArrowDownRight
                                 width="40"
                                 height="40"
                                 stroke-width="1.5"
-                                class="px-2 transform group-hover:-rotate-45 transition-all duration-300 ease-in-out group-hover:text-primary"
-                                :class="{
-                                    'text-white ': isScrolling,
-                                    'text-primary': !isScrolling,
-                                }" /></Button></Link
+                                class="px-2 transform group-hover:-rotate-45 transition-all duration-300 ease-in-out group-hover:text-primary" /></Button></Link
                 ></CardFooter>
             </div>
         </Card>

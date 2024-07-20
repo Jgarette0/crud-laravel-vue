@@ -29,6 +29,7 @@ Route::get('/Contact', function () {
 })->name('contact');
 
 Route::inertia('/Contact','Contact' , ['forms' => Form::all()])->name('contact');
+
 Route::post('/Login', [AuthController::class, 'login']);
 Route::post('/Contact', [FormController::class, 'contact']);
 Route::post('/Register', [AuthController::class, 'register']);

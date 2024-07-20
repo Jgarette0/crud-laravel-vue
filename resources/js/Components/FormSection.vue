@@ -2,7 +2,7 @@
 import { Card } from "@/Components/ui/card";
 import { Label } from "@/Components/ui/label";
 import { Input } from "@/Components/ui/input";
-import { Textarea } from "@/Components/ui/textarea";
+// import { Textarea } from "@/Components/ui/textarea";
 import { Button } from "@/Components/ui/button";
 import { useForm } from "@inertiajs/vue3";
 
@@ -80,7 +80,8 @@ const submit = () => {
                         v-model="form.description"
                         class="py-1 md:py-6 text-md md:text-xl"
                         placeholder="Type your message here."
-                    /> --><Label
+                    /> -->
+                    <Label
                         for="serviceType"
                         class="text-right text-md md:text-xl"
                     >

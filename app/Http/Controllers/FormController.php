@@ -13,6 +13,6 @@
                 'description' => ['required', 'max:255'],
             ]);
             Form::create($fields);
-            return redirect()->route('contact');
+            return redirect()->route('about');
         }
     }

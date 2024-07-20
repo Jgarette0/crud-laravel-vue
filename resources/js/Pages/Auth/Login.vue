@@ -4,7 +4,7 @@ import Title from "@/Components/Title.vue";
 import FormLogin from "@/Components/FormLogin.vue";
 import SectionGroup from "@/Components/ui/SectionGroup.vue";
 import FormLoginHeading from "../../Components/FormLoginHeading.vue";
-const pageTitle = "Register Section";
+const pageTitle = "Login";
 </script>
 
 <template>
