@@ -32,7 +32,7 @@
             if (Auth::attempt($fields, $request->remember))
             {
                 $request->session()->regenerate();
-                return redirect()->intended('/Contact');
+                return redirect()->intended(route('contact'));
             }
             return back()->withErrors
             (['email' => 'The provided credentials do not match our records.',])

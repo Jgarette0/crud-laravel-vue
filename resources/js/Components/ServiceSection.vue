@@ -22,7 +22,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
 <template>
     <div
         ref="target"
-        class="flex flex-col place-items-center gap-8 w-screen px-2 md:px-8 py-12 md:py-20"
+        class="flex flex-col place-items-center gap-8 w-screen px-20 py-12 md:py-20"
     >
         <div class="text-lg sm:text-xl mb-8 font-mona text-foreground">
             OUR SERVICES
@@ -39,7 +39,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
                 <img
                     src="images/Searching.png"
                     alt=""
-                    class="md:h-[120%] md:-translate-y-8"
+                    class="md:h-[120%] md:-translate-y-8 object-cover"
                     srcset=""
                 />
             </div>
@@ -76,9 +76,9 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
         </Card>
         <Card
             id="mobiledevelopment"
-            class="bg-primary w-full rounded-xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row-reverse flex-col transition-all duration-300 z-8 ease-in hover:z-15"
+            class="bg-primary w-full rounded-4xl md:rounded-[2rem] md:h-[28rem] flex px-2 md:px-12 place-items-center justify-center md:flex-row-reverse flex-col transition-all duration-300 z-8 ease-in hover:z-15"
             :class="{
-                'rotate-[1deg] hover:rotate-[0deg]': isVisible,
+                '-rotate-[1deg] hover:rotate-[0deg]': isVisible,
                 '': !isVisible,
             }"
         >
@@ -86,7 +86,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
                 <img
                     src="images/Upload-photo.png"
                     alt=""
-                    class="md:h-[120%] md:-translate-y-8 scale-[.85]"
+                    class="md:h-[120%] md:-translate-y-8 scale-[.85] object-cover"
                     srcset=""
                 />
             </div>
@@ -132,7 +132,7 @@ const { stop } = useIntersectionObserver(target, ([{ isIntersecting }]) => {
                 <img
                     src="images/Project-planning.png"
                     alt=""
-                    class="md:h-[120%] md:-translate-y-8"
+                    class="md:h-[120%] md:-translate-y-8 object-cover"
                     srcset=""
                 />
             </div>

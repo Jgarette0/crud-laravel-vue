@@ -9,12 +9,10 @@ class Form extends Model
 {
     use HasFactory;
 
-    // Allow mass assignment for these attributes
     protected $fillable = [
-        'name',
+        'message',
         'email',
         'company',
-        'description',
+        'service',
     ];
 }
-

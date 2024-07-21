@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('message')->nullable();
             $table->string('email')->nullable();
             $table->string('company')->nullable();
-            $table->text('description')->nullable();
+            $table->text('service')->nullable();
             $table->timestamps();
         });
     }

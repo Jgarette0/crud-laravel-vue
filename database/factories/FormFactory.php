@@ -24,10 +24,10 @@ class FormFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'message' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'company' => $this->faker->company,
-            'description' => $this->faker->sentence,
+            'service' => $this->faker->sentence,
             'created_at' => now(),
             'updated_at' => now(),
         ];

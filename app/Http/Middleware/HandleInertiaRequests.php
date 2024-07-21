@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
-
+use App\Models\Form;
 class HandleInertiaRequests extends Middleware
 {
     /**
@@ -39,6 +39,7 @@ class HandleInertiaRequests extends Middleware
              'auth.user' => fn () => $request->user()
              ? $request->user()->only('id', 'name', 'email')
              : null,
+             'companies' => Form::all(),
 
         ]);
     }
