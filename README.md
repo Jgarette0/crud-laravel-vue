@@ -36,13 +36,13 @@
     php artisan key:generate
     ```
 
-7. Compile the assets:
+7. Migrate tables to database:
 
     ```bash
     php artisan migrate
     ```
 
-8. Serve the application:
+8. Populate with fake datas:
 
     ```bash
     php artisan db:seed
