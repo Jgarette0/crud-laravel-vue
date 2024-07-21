@@ -17,7 +17,7 @@ defineProps({
 
 const { props } = usePage();
 
-const selectedCompany = ref(props.companies[0]); // Assuming you're editing the first company for this example
+const selectedCompany = ref(props.companies[0]);
 
 const form = useForm({
   company: selectedCompany.value.company,
