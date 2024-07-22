@@ -35,7 +35,7 @@ const submit = () => {
       <Card
         class="md:w-5/6 py-8 w-full bg-accent flex flex-col justify-around h-full rounded-[1.2rem]"
         ><div class="flex flex-col place-items-center">
-          <h1 class="text-3xl text-blue-700">Send Us a Message</h1>
+          <h1 class="text-3xl text-blue-700">Request a Service</h1>
         </div>
         <div class="flex flex-col gap-4 px-8 justify-between md:pt-12 w-full">
           <div class="flex flex-col place-items-start gap-1">
@@ -43,7 +43,7 @@ const submit = () => {
               Email
             </Label>
             <Input
-              :value="$page.props.auth.user.email"
+              autocomplete
               :placeholder="$page.props.auth.user.email"
               v-model="form.email"
               id="email"
@@ -63,7 +63,7 @@ const submit = () => {
           </div>
           <div class="flex flex-col place-items-start gap-1 relative">
             <Label for="serviceType" class="text-right text-md">
-              What service do you need?
+              Service Type
             </Label>
             <div class="absolute bottom-3 right-2 opacity-80">
               <ChevronDown />
@@ -83,8 +83,8 @@ const submit = () => {
           <div class="flex flex-col">
             <textarea
               v-model="form.message"
-              class="py-1 md:py-6 text-md border"
-              placeholder="Type your message here."
+              class="py-1 md:py-6 text-md border px-2"
+              placeholder="Project Description"
             />
           </div>
 

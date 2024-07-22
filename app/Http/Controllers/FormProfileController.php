@@ -13,7 +13,7 @@ class FormProfileController extends Controller
 {
     public function edit(): Response
     {
-       
+
         $forms = Form::all(['company', 'service']);
         return Inertia::render('Edit', ['forms' => $forms]);
     }

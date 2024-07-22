@@ -25,7 +25,7 @@ class FormFactory extends Factory
     {
         return [
             'message' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+            'email' => $this->faker->safeEmail,
             'company' => $this->faker->company,
             'service' => $this->faker->sentence,
             'created_at' => now(),

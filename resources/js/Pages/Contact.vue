@@ -3,6 +3,7 @@ import MainLayout from "@/Layout/MainLayout.vue";
 import Title from "@/Components/Title.vue";
 import { Link } from "@inertiajs/vue3";
 import FormSection from "@/Components/FormSection.vue";
+import { Pencil } from "lucide-vue-next";
 
 const pageTitle = "Contact Us";
 
@@ -22,7 +23,7 @@ const props = defineProps({
       <v-container
         class="text-center font-semibold text-3xl mb-8 text-blue-700"
       >
-        Companies Interested in Our Services
+        Requested Services
       </v-container>
       <v-container>
         <v-row class="d-flex justify-center">
@@ -34,12 +35,12 @@ const props = defineProps({
             class="d-flex justify-center"
           >
             <Link :href="route('form.edit', { id: company.id })">
-              <v-btn>edit</v-btn></Link
-            >
+              <v-btn class="z-0 translate-x-1"> <Pencil color="blue" /></v-btn
+            ></Link>
             <v-card
               class="pa-4 d-flex flex-column align-center border border-black w-[540px]"
               outlined
-              ><div>{{ company.id }}</div>
+            >
               <v-card-title class="text-h6 mb-2 text-primary">
                 {{ company.company }}
               </v-card-title>

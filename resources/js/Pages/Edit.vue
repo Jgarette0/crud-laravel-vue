@@ -7,9 +7,6 @@ import { ref } from "vue";
 
 const pageTitle = "Contact Us";
 defineProps({
-  status: {
-    type: String,
-  },
   companies: {
     type: Array,
   },
@@ -17,7 +14,8 @@ defineProps({
 
 const { props } = usePage();
 
-const selectedCompany = ref(props.companies[0]); // Assuming you're editing the first company for this example
+const selectedCompany = ref(props.companies[0]);
+// Assuming you're editing the first company for this example
 
 const form = useForm({
   company: selectedCompany.value.company,
