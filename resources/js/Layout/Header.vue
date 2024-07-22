@@ -27,94 +27,61 @@ const toggle = () => {
         :class="{
             'bg-accent': isScrolling,
             'bg-transparent': !isScrolling,
-        }"
-    >
-        <header class="w-3/4 flex justify-between place-items-center h-20">
-            <div class="flex gap-4">
-                <div @click="toggle" class="cursor-pointer">
-                    <img src="images/favic.png" class="h-12 hover:opacity-90" />
-                </div>
-                <transition
-                    enter-active-class="transition-opacity duration-300"
-                    enter-from-class="opacity-0"
-                    enter-to-class="opacity-100"
-                    leave-active-class="transition-opacity duration-300"
-                    leave-from-class="opacity-100"
-                    leave-to-class="opacity-0"
-                >
-                    <span
-                        class="font-extrabold font-sans text-4xl text-primary duration-300 transition-all ease-in-out"
-                        v-show="showTitle"
-                        >GARETTE TECHNOLOGY CO.</span
-                    >
-                </transition>
-            </div>
-            <ul
-                class="flex gap-3 place-items-center bg-accent py-2 px-2 rounded-full"
-            >
-                <Link :href="route('home')"
-                    ><li
-                        class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
-                        :class="{
-                            'bg-blue-100': $page.component === 'Home',
-                        }"
-                    >
-                        Home
-                    </li>
+        }">
+        <header class="w-3/4 flex justify-center place-items-center h-20">
+            <ul class="flex gap-1 place-items-center bg-accent py-2 px-2 rounded-full">
+                <Link :href="route('home')">
+                <li class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-1 rounded-full"
+                    :class="{
+                        'bg-blue-100': $page.component === 'Home',
+                    }">
+                    Home
+                </li>
                 </Link>
-                <Link :href="route('about')"
-                    ><li
-                        class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
-                        :class="{
-                            'bg-blue-100': $page.component === 'About',
-                        }"
-                    >
-                        About
-                    </li></Link
-                >
+                <Link :href="route('about')">
+                <li class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-1 rounded-full"
+                    :class="{
+                        'bg-blue-100': $page.component === 'About',
+                    }">
+                    About
+                </li>
+                </Link>
 
-                <div class="flex flex-row gap-3" v-if="$page.props.auth.user">
-                    <Link :href="route('contact')"
-                        ><li
-                            class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
-                            :class="{
-                                'bg-blue-100': $page.component === 'Contact',
-                            }"
-                        >
-                            Contact us
-                        </li></Link
-                    >
-                    <Link href="/Logout" method="post" as="button" type="button"
-                        ><li
-                            class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
-                        >
-                            Logout
-                        </li></Link
-                    >
+                <div class="flex flex-row gap-1" v-if="$page.props.auth.user">
+                    <Link :href="route('contact')">
+                    <li class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-1 rounded-full"
+                        :class="{
+                            'bg-blue-100': $page.component === 'Contact',
+                        }">
+                        Contact us
+                    </li>
+                    </Link>
+
+                    <Link :href="route('profile.edit')">
+                    <li class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-1 rounded-full"
+                        :class="{
+                            'bg-blue-100': $page.component === 'profile',
+                        }">
+                        Profile
+                    </li>
+                    </Link>
+                    <Link href="/logout" method="post" as="button" type="button">
+                    <li
+                        class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-1 rounded-full">
+                        Logout
+                    </li>
+                    </Link>
                 </div>
 
-                <div v-else class="flex flex-row gap-3">
-                    <Link :href="route('register')"
-                        ><li
-                            class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
-                            :class="{
-                                'bg-blue-100':
-                                    $page.component === 'Auth/Register',
-                            }"
-                        >
-                            Signup
-                        </li></Link
-                    >
-                    <Link :href="route('login')"
-                        ><li
-                            class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-3 rounded-full"
-                            :class="{
-                                'bg-blue-100': $page.component === 'Auth/Login',
-                            }"
-                        >
-                            Signin
-                        </li></Link
-                    >
+                <div v-else class="flex flex-row gap-1">
+                    <Link :href="route('login')">
+                    <li class="font-semibold text-[16px] font-mona text-primary transition-all duration-300 ease-in-out hover:bg-blue-100 px-5 py-1 rounded-full"
+                        :class="{
+                            'bg-blue-100': $page.component === 'Auth/Login',
+                        }">
+                        Login
+                    </li>
+                    </Link>
                 </div>
             </ul>
         </header>

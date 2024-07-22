@@ -10,7 +10,6 @@
     class AuthController extends Controller
     {
 
-      
          public function register(Request $request)
         {
            $fields = $request->validate([
@@ -19,8 +18,8 @@
                 'password' => ['required', 'confirmed']
             ]);
 
-            $user = User::create($fields); 
-            Auth::login($user);           
+            $user = User::create($fields);
+            Auth::login($user);
             return redirect()->route('home');
         }
 
@@ -29,11 +28,11 @@
             $fields = $request->validate
             (['email' => ['required', 'email']
             ,'password' => ['required'],]);
-        
+
             if (Auth::attempt($fields, $request->remember))
             {
                 $request->session()->regenerate();
-                return redirect()->intended('/Contact');
+                return redirect()->intended(route('contact'));
             }
             return back()->withErrors
             (['email' => 'The provided credentials do not match our records.',])

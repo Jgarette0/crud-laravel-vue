@@ -16,7 +16,7 @@ import { Linkedin } from "lucide-vue-next";
             >
                 <div
                     v-if="$page.props.auth.user"
-                    class="flex-col md:flex-row justify-center text-[12rem] uppercase font-dahlia pb-20 hidden md:flex place-items-center gap-3"
+                    class="flex-col md:flex-row justify-center text-[12rem] uppercase font-dahlia pb-20 hidden md:flex place-items-center gap-3 text-blue-700"
                 >
                     {{ $page.props.auth.user.name }}
                 </div>

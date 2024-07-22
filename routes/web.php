@@ -1,39 +1,49 @@
 <?php
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\FormController;
 use App\Models\Form;
 use Inertia\Inertia;
-
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthProfileController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\FormProfileController;
 
 Route::get('/', function () {
     return Inertia::render('Home');
 })->name('home');
 
-Route::get('/About', function () {
+Route::get('/about-us', function () {
     return Inertia::render('About');
 })->name('about');
 
+Route::get('/contact-us', function () {
+    return Inertia::render('Contact', ['forms' => Form::all()]);
+})->name('contact');
 
-Route::get('/Login', function () {
+Route::get('/login-account', function () {
     return Inertia::render('Auth/Login');
 })->name('login');
 
-Route::get('/Register', function () {
+Route::get('/create-account', function () {
     return Inertia::render('Auth/Register');
 })->name('register');
 
 
-Route::get('/Contact', function () {
-    return Inertia::render('Contact');
-})->name('contact');
+Route::post('/login-account', [AuthController::class, 'login']);
+Route::post('/create-account', [AuthController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/contact-us', [FormController::class, 'createForm']);
 
-Route::inertia('/Contact','Contact' , ['forms' => Form::all()])->name('contact');
-Route::post('/Login', [AuthController::class, 'login']);
-Route::post('/Contact', [FormController::class, 'contact']);
-Route::post('/Register', [AuthController::class, 'register']);
-Route::post('/Logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/edit-account', [AuthProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/edit-account', [AuthProfileController::class, 'update'])->name('profile.update');
+Route::delete('/edit-account', [AuthProfileController::class, 'destroy'])->name('profile.destroy');
 
-// this is from chat gpt
-Route::put('/Contact/{id}', [FormController::class, 'update']);
-Route::delete('/Contact/{id}', [FormController::class, 'destroy']);
+Route::get('/editForm/{id}', [FormProfileController::class, 'edit'])->name('form.edit');
+Route::patch('/editForm/{id}', [FormProfileController::class, 'update'])->name('form.update');
+Route::delete('/editForm/{id}', [FormProfileController::class, 'destroy'])->name('form.destroy');
+
+Route::get('/editForm', function () {
+    return Inertia::render('Edit');
+})->name('edit');
+Route::get('/editForm', function () {
+    return Inertia::render('Edit', ['companies' => Form::all()]);
+})->name('edit');

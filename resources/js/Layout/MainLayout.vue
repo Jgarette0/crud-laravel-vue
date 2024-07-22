@@ -10,7 +10,7 @@ import Sidebar from "./Sidebar.vue";
         <Sidebar />
         <main>
             <div class="flex flex-col">
-                <slot></slot>
+                <slot />
             </div>
         </main>
         <Footer />

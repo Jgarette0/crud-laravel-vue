@@ -4,7 +4,7 @@ import MainLayout from "@/Layout/MainLayout.vue";
 import Title from "@/Components/Title.vue";
 import SectionGroup from "@/Components/ui/SectionGroup.vue";
 import RegisterFormHeading from "../../Components/RegisterFormHeading.vue";
-const pageTitle = "Register Section";
+const pageTitle = "Register";
 </script>
 
 <template>
