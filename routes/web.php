@@ -33,3 +33,7 @@ Route::post('/Login', [AuthController::class, 'login']);
 Route::post('/Contact', [FormController::class, 'contact']);
 Route::post('/Register', [AuthController::class, 'register']);
 Route::post('/Logout', [AuthController::class, 'logout'])->name('logout');
+
+// this is from chat gpt
+Route::put('/Contact/{id}', [FormController::class, 'update']);
+Route::delete('/Contact/{id}', [FormController::class, 'destroy']);

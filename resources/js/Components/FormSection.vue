@@ -45,6 +45,7 @@ const submit = () => {
                         Name
                     </Label>
                     <Input
+                        :value="$page.props.auth.user.name"
                         :placeholder="$page.props.auth.user.name"
                         id="name"
                         class="py-3 md:py-6 text-md md:text-xl"
@@ -56,8 +57,9 @@ const submit = () => {
                         Email
                     </Label>
                     <Input
-                        :placeholder="$page.props.auth.user.email"
                         v-model="form.email"
+                        :value="$page.props.auth.user.email"
+                        :placeholder="$page.props.auth.user.email"
                         id="username"
                         class="py-1 md:py-6 text-md md:text-xl"
                     />
@@ -73,38 +75,48 @@ const submit = () => {
                     />
                 </div>
                 <div class="flex flex-col place-items-start gap-1">
-                    <!-- <Label for="username" class="text-right text-md md:text-xl">
-                        How can we help you {{ $page.props.auth.user.name }}?
-                    </Label> -->
-                    <!-- <Textarea
-                        v-model="form.description"
-                        class="py-1 md:py-6 text-md md:text-xl"
-                        placeholder="Type your message here."
-                    /> --><Label
+                    <Label
                         for="serviceType"
                         class="text-right text-md md:text-xl"
                     >
-                        <span class="uppercase">
-                            {{ $page.props.auth.user.name }}</span
-                        >, What service do you need?
+                        What service do you need?
                     </Label>
-                    <select
-                        v-model="form.description"
-                        id="serviceType"
-                        class="py-1 md:py-6 text-md md:text-xl w-full rounded-[0px] border"
-                        placeholder="Web Development"
-                    >
-                        <option value="" disabled selected>
-                            Select a service
-                        </option>
-                        <option value="Web Development">Web Development</option>
-                        <option value="Mobile Development">
-                            Mobile Development
-                        </option>
-                        <option value="Project Management">
-                            Project Management
-                        </option>
-                    </select>
+                    <div class="relative w-full">
+                        <div class="absolute bottom-2 right-4">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-chevron-down"
+                            >
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </div>
+                        <select
+                            v-model="form.description"
+                            id="serviceType"
+                            class="py-1 md:py-6 text-md md:text-xl w-full px-2 rounded-[10px] border relative"
+                        >
+                            <option value="Web Development">
+                                Web Development
+                            </option>
+                            <option class="px-2" value="Mobile Development">
+                                Mobile Development
+                            </option>
+                            <option class="px-2" value="Project Management">
+                                Project Management
+                            </option>
+                            <option class="px-2" value="" disabled selected>
+                                Select a service
+                            </option>
+                        </select>
+                    </div>
                 </div>
                 <Button
                     class="group px-5 md:px-6 text-lg md:text-2xl rounded-full py-3 md:py-7 sm:flex font-mona bg-primary text-accent"

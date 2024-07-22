@@ -6,7 +6,6 @@ import FormSection from "@/Components/FormSection.vue";
 
 const pageTitle = "Contact Us";
 
-// Correctly define props and destructure it if needed
 const props = defineProps({
     forms: {
         type: Array,
